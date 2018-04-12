@@ -5,4 +5,4 @@ Analisis y Diseño de Sistemas I
 
 Nombre                                                      Carne
 ______________________________________________________________________
-Henry Haroldo Fajardo Velasquez ---------------------------2000-18283
+Henry Haroldo Fajardo V. ---------------------------2000-18283
