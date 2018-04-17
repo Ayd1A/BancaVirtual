@@ -1,3 +1,4 @@
+
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -101,7 +102,75 @@
 </style>
   </head>
   <body id="page-top">
+	  
+    
+	  
+	  
+	  <?php if (isset($_SESSION['user_name'])) : ?>
+	  
+	
 
+   <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span> 
+                        <a href="#myModal" class="btn btn-success" data-toggle="modal">
+                        <strong><?php echo $_SESSION["user_name"]; ?>	</strong>
+                       </a>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="navbar-login">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p class="text-center">
+                                            <span class="glyphicon glyphicon-user icon-size"></span>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p class="text-left"><strong>
+											
+											
+											
+									
+											Bienvenido <?php echo $_SESSION["user_name"]; ?>
+											
+								
+											</strong></p>
+                                     
+                                          <form action="controlador/end.php" method="post">
+					   
+			<div class="text-center">
+
+
+		<button type="submit" class="btn btn-success">Cerrar Sesión</button>
+</div>
+
+				</form>
+				
+				  
+                               
+
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                      
+                    </ul>
+                </li>
+            </ul>
+            
+      
+<?php endif; ?>
+    
+             
+           
+
+             
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Banca Virtual</span>
@@ -127,13 +196,7 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#beneficios">Beneficios</a>
           </li>
-            
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#MiCuenta">Mi Cuenta</a>
-          </li>         
-          
-          
-            <li class="nav-item">
+              <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#menu">Menu</a>
           </li>
           
@@ -241,18 +304,8 @@
       
 
     </div>
-    
-     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="MiCuenta">
-        <div class="my-auto">
-          <h2 class="mb-5">Mi Cuenta</h2>
-<p class="mb-5"> Ver mis estados de cuenta y datos personales</p>
-  <div class="text-center">
 
-	<a href="home.php" class="btn btn-success">ENTRAR</a>
-</div>
-   </div>
-         
-      </section>
+    
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="menu">
         <div class="my-auto">
           <h2 class="mb-5">Menu</h2>
@@ -265,20 +318,16 @@
          
       </section>
 
-
-      
-
     </div>
-
+    
 
 <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="login">
         <div class="my-auto">
-          <h2 class="mb-5">Login</h2>
-<p class="mb-5">IMPORTANTE: 
-PARA PODER INGRESAR TENER ACCESO A TU CUETA DEBES INGRESAR CON TU CORREO Y CONTRASEÑA DE TU BANCA VIRTUAL. SI AÚN NO CUENTAS CON USUARIO Y CONTRASEÑA CON GUSTO TE ATENDEREMOS EN NUESTRA AGENCIA MAS CERCANA.</p>
+          <h2 class="mb-5">Mi cuenta</h2>
+<p class="mb-5">A CONTINUACION SE MUESTRAN SUS CUENTAS Y SALDO DISPONIBLE.</p>
 <div class="text-center">
 
-	<a href="#myModal" class="btn btn-success" data-toggle="modal">INGRESAR</a>
+	<a href="#myModal" class="btn btn-success" data-toggle="modal">SALIR</a>
 </div>
 
 <div id="myModal" class="modal fade">
@@ -294,7 +343,7 @@ PARA PODER INGRESAR TENER ACCESO A TU CUETA DEBES INGRESAR CON TU CORREO Y CONTR
 			<div class="modal-body">
 				<form action="controlador/controlador.php" method="post">
 					<div class="form-group">
-						<input type="text" class="form-control" name="user" placeholder="Correo" required="required">		
+						<input type="text" class="form-control" name="user" placeholder="Usuario" required="required">		
 					</div>
 					<div class="form-group">
 						<input type="password" class="form-control" name="password" placeholder="Contraseña" required="required">	
