@@ -31,7 +31,7 @@ CREATE TABLE `cliente_cuenta` (
    `idclientcuenta` int(11) NOT NULL AUTO_INCREMENT,
    `idcliente` int(11) NOT NULL,
   `idcuenta` int(11) NOT NULL,
- `monto` int(11) NOT NULL,
+ `monto` DECIMAL (10, 2) NOT NULL,
    CONSTRAINT FK_client FOREIGN KEY (idcliente)
     REFERENCES clientes(idcliente)  ON DELETE CASCADE,
   CONSTRAINT FK_cuenta FOREIGN KEY (idcuenta)
@@ -40,15 +40,15 @@ CREATE TABLE `cliente_cuenta` (
  PRIMARY KEY (`idclientcuenta`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
-INSERT INTO cliente_cuenta (idcliente, idcuenta)
-VALUES (1, 2);
+INSERT INTO cliente_cuenta (idcliente, idcuenta,monto)
+VALUES (1, 2,200.00);
 
 
 CREATE TABLE `movimientos` ( 
    `idmov` int(11) NOT NULL AUTO_INCREMENT,
    `idcliente` int(11) NOT NULL,
   `idcuenta` int(11) NOT NULL,
- `monto` int(11) NOT NULL,
+ `monto` DECIMAL (10, 2) NOT NULL,
   `tipo` varchar(40)  NOT NULL,
    CONSTRAINT FK_client1 FOREIGN KEY (idcliente)
     REFERENCES clientes(idcliente)  ON DELETE CASCADE,
@@ -59,4 +59,4 @@ CREATE TABLE `movimientos` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 INSERT INTO movimientos (idcliente, idcuenta,monto,tipo)
-VALUES (1, 2, 'retiro', '90');
+VALUES (1, 2,90.00, 'retiro');
