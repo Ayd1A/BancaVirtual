@@ -43,6 +43,11 @@ CREATE TABLE `cliente_cuenta` (
 INSERT INTO cliente_cuenta (idcliente, idcuenta,monto)
 VALUES (1, 2,200.00);
 
+where  idcliente=1
+select nombre from cuenta where  idcuenta=2
+
+
+select*from cliente_cuenta where  idcliente=1
 
 CREATE TABLE `movimientos` ( 
    `idmov` int(11) NOT NULL AUTO_INCREMENT,
