@@ -31,7 +31,7 @@ CREATE TABLE `cliente_cuenta` (
    `idclientcuenta` int(11) NOT NULL AUTO_INCREMENT,
    `idcliente` int(11) NOT NULL,
   `idcuenta` int(11) NOT NULL,
-
+ `monto` int(11) NOT NULL,
    CONSTRAINT FK_client FOREIGN KEY (idcliente)
     REFERENCES clientes(idcliente)  ON DELETE CASCADE,
   CONSTRAINT FK_cuenta FOREIGN KEY (idcuenta)
