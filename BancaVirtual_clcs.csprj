@@ -1,0 +1,17 @@
+
+<codestructure version="5.8">
+<phptree>
+<treenode node="../modelo/modelo.php;PHP:PHP Include;/var/www/html/BancaVirtual/controlador/controlador.php;f15;4;35;4;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+</treenode>
+<treenode node="../vista/vista.php;PHP:PHP Include;/var/www/html/BancaVirtual/controlador/controlador.php;f15;7;33;7;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+</treenode>
+<treenode node="user;PHP:Class Name;/var/www/html/BancaVirtual/modelo/modelo.php;f0;1;1;28;;;;vpos;;v;;r;;d0,2;;b0,0;;m">
+<treenode node="__construct;PHP:Function Name;/var/www/html/BancaVirtual/modelo/modelo.php;f8;6;2;10;;;;vpos;;v;;r;;d1,7;;b1,0;;m">
+</treenode>
+<treenode node="lista_usuarios;PHP:Function Name;/var/www/html/BancaVirtual/modelo/modelo.php;f8;17;2;27;;;;vpos;;v;;r;;d1,18;;b1,0;;musuario;;ppass;;p">
+</treenode>
+<treenode node="set_names;PHP:Function Name;/var/www/html/BancaVirtual/modelo/modelo.php;f9;12;2;15;;;;vpos;;v;;r;;d1,13;;b3,0;;m">
+</treenode>
+</treenode>
+</phptree>
+</codestructure>

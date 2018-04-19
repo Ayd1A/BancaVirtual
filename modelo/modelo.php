@@ -2,11 +2,13 @@
 class user
 {
 	private $usuarios;
+		private $usuarios2;
 	private $conexion;
 
 	public function __construct()
 	{
 		$this->usuarios = array();
+		$this->usuarios2 = array();
 		$this->conexion = new PDO('mysql:host=localhost;dbname=bancavirtual', "root", "root");
 	}
 
@@ -17,14 +19,39 @@ class user
 
 	public function lista_usuarios($usuario,$pass)
 	{
-		self::set_names();
-		$sql="select  nombre, email  from usuario where usuario = '$usuario' AND password = '$pass'";
+		//$password_1 = md5($pass);//encrypt the password before saving in the database
+		$sql="select  nombres,apellido, correo,user_type from cliente where correo = '$usuario' AND password = '$pass'";
 		foreach ($this->conexion->query($sql) as $res)
 		{
 			$this->usuarios[]=$res;
 		}
 		return $this->usuarios;
-		$this->conexion=null;
+	
 	}
+	public function getuser2($usuario,$pass)
+	{
+		//$password_1 = md5($pass);//encrypt the password before saving in the database
+		$sql1="select  user_type from cliente where correo = '$usuario' AND password = '$pass'";
+		$sql2=null;
+		foreach ($this->conexion->query($sql1) as $res)
+		{
+			$this->usuarios2[]=$res;
+		}
+		return $this->usuarios2;
+			$this->conexion=null;
+	}
+public function getuser($usuario,$pass)
+	{
+		//$password_1 = md5($pass);//encrypt the password before saving in the database
+		$sql1="select  user_type from cliente where correo = '$usuario' AND password = '$pass'";
+		$sql2=null;
+		foreach ($this->conexion->query($sql1) as $res)
+		{
+			$sql2=$res;
+		}
+		return $sql2;
+			$this->conexion=null;
+	}
+	
 }
 ?>
