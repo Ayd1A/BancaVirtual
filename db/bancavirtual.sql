@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-04-2018 a las 04:44:34
+-- Tiempo de generación: 19-04-2018 a las 07:51:13
 -- Versión del servidor: 10.1.31-MariaDB
 -- Versión de PHP: 7.2.3
 
@@ -100,16 +100,18 @@ CREATE TABLE `movimientos` (
   `idmov` int(11) NOT NULL,
   `idcliente` int(11) NOT NULL,
   `idcuenta` int(11) NOT NULL,
-  `monto` decimal(10,2) NOT NULL,
-  `tipo` varchar(40) NOT NULL
+  `monto` int(11) NOT NULL,
+  `tipo` varchar(40) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `movimientos`
 --
 
-INSERT INTO `movimientos` (`idmov`, `idcliente`, `idcuenta`, `monto`, `tipo`) VALUES
-(1, 1, 2, '90.00', 'retiro');
+INSERT INTO `movimientos` (`idmov`, `idcliente`, `idcuenta`, `monto`, `tipo`, `fecha`) VALUES
+(1, 1, 1, 90, 'retiro', '2011-08-21 20:11:09'),
+(2, 2, 1, 120, 'ingreso', '2018-04-19 04:17:58');
 
 -- --------------------------------------------------------
 
@@ -197,7 +199,7 @@ ALTER TABLE `cuenta`
 -- AUTO_INCREMENT de la tabla `movimientos`
 --
 ALTER TABLE `movimientos`
-  MODIFY `idmov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idmov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
