@@ -114,7 +114,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-user"></span> 
-                        <a href="#myModal" class="btn btn-success" data-toggle="modal">
+                        <a href="" class="btn btn-success" data-toggle="modal">
                         <strong><?php echo $_SESSION["user_name"]; ?>	</strong>
                        </a>
                         <span class="glyphicon glyphicon-chevron-down"></span>
@@ -165,10 +165,9 @@
             </ul>
             
       
-<?php endif; ?>
-    
+  
              
-           
+           <?php endif; ?>
 
              
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
@@ -200,13 +199,12 @@
             <a class="nav-link js-scroll-trigger" href="#menu">Menu</a>
           </li>
           
-           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#login">Login</a>
-          </li>
+          
         </ul>
       </div>
     </nav>
-
+  <?php if (isset($_SESSION['user_name'])) : ?>
+	  
     <div class="container-fluid p-0">
 
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
@@ -217,6 +215,15 @@
           <div class="subheading mb-5">Guatemala,2018.
             <a href="mailto:name@email.com">bv@gmail.com</a>
           </div>
+          
+         	
+          	
+       
+            
+
+
+          	  <?php echo $_SESSION["gettable"]; ?>      
+<br>
           <p class="mb-5">Con este servicio puedes efectuar tus transacciones de consultas, transferencias, pagos de servicios y otras gestiones, sin necesidad de presentarte a una agencia Bancaria. Este servicio te simplifica la vida, únicamente debes ingresar a nuestro portal desde la comodidad de tu hogar, trabajo o cualquier ubicación en la cual tengas a tu disposición una computadora con acceso a Internet.</p>
           <ul class="list-inline list-social-icons mb-0">
             <li class="list-inline-item">
@@ -320,14 +327,24 @@
 
     </div>
     
+	
+<?php    
+        else:?>
+        
+        <div class="alert alert-warning">
+  <strong>Aviso! </strong> Necesita estar logueado para ver esta sección
+</div>
 
+<?php endif; ?>
+	
 <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="login">
         <div class="my-auto">
-          <h2 class="mb-5">Mi cuenta</h2>
-<p class="mb-5">A CONTINUACION SE MUESTRAN SUS CUENTAS Y SALDO DISPONIBLE.</p>
+          <h2 class="mb-5">Login</h2>
+<p class="mb-5">IMPORTANTE: 
+PARA PODER INGRESAR TENER ACCESO A TU CUETA DEBES INGRESAR CON TU CORREO Y CONTRASEÑA DE TU BANCA VIRTUAL. SI AÚN NO CUENTAS CON USUARIO Y CONTRASEÑA CON GUSTO TE ATENDEREMOS EN NUESTRA AGENCIA MAS CERCANA.</p>
 <div class="text-center">
 
-	<a href="#myModal" class="btn btn-success" data-toggle="modal">SALIR</a>
+	<a href="#myModal" class="btn btn-success" data-toggle="modal">INGRESAR</a>
 </div>
 
 <div id="myModal" class="modal fade">
@@ -343,7 +360,7 @@
 			<div class="modal-body">
 				<form action="controlador/controlador.php" method="post">
 					<div class="form-group">
-						<input type="text" class="form-control" name="user" placeholder="Usuario" required="required">		
+						<input type="text" class="form-control" name="user" placeholder="Correo" required="required">		
 					</div>
 					<div class="form-group">
 						<input type="password" class="form-control" name="password" placeholder="Contraseña" required="required">	
@@ -365,6 +382,11 @@
           
       
       </section>
+
+
+ 
+
+
 
     <script src="librerias/jquery/jquery.min.js"></script>
     <script src="librerias/bootstrap/js/bootstrap.bundle.min.js"></script>

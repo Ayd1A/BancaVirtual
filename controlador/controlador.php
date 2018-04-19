@@ -6,6 +6,10 @@ $b=$_POST["password"];
 	$menu = new user();
 	$pd = $menu->lista_usuarios($a,$b);
 	$pd2 = $menu->getuser($a,$b);
+	//$pd3 = $menu->gettable($a,$b);
+		$pd3 = $menu->gettable($a,$b);
+
+	
 	require_once("../vista/vista.php");
 ?>
 

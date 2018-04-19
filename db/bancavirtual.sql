@@ -46,7 +46,7 @@ VALUES (1, 2,200.00);
 where  idcliente=1
 select nombre from cuenta where  idcuenta=2
 
-
+select*from cliente_cuenta
 select*from cliente_cuenta where  idcliente=1
 
 CREATE TABLE `movimientos` ( 
