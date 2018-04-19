@@ -9,7 +9,7 @@ class user
 	{
 		$this->usuarios = array();
 		$this->usuarios2 = array();
-		$this->conexion = new PDO('mysql:host=localhost;dbname=ingeniod_myapp', "ingeniod_user", "deseret1234");
+		$this->conexion = new PDO('mysql:host=localhost;dbname=bancavirtual', "root", "");
 	}
 
 	private function set_names()
