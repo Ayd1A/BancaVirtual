@@ -284,7 +284,7 @@
             <div class="resume-content mr-auto">
              
                <div class="container-fluid p-0">		
-					<form action="contactform/Prodform.php" method="post" role="form" > 
+					<form action="controlador/insertluz.php" method="post" role="form" > 
 						
 
 								 Proveedora:
@@ -322,7 +322,7 @@
 			</h1>
           
 				 <div class="container-fluid p-0">		
-					<form action="contactform/Prodform.php" method="post" role="form" > 
+					<form action="controlador/insertagua.php" method="post" role="form" > 
 								    
 			  
 									
