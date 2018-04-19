@@ -100,60 +100,70 @@ $b = $b .  "</table>";
 
 
 
-		$this->conexion=null;
+		
 		return $b;
 	}
-		public function gettable0($usuario,$pass)
+		public function getmov($usuario,$pass)
 		{
-		//$password_1 = md5($pass);//encrypt the password before saving in the database
-		$sql1="select  idcliente from clientes where correo = '$usuario' AND password = '$pass'";
+			
+			$sql1="select  idcliente from clientes where correo = '$usuario' AND password = '$pass'";
 		$sql2=null;
 		foreach ($this->conexion->query($sql1) as $res)
 		{
 			$sql2=$res;
 		}
-		
-			$sql3="	select a.idcuenta as 'Numero de cuenta',b.nombre,a.monto
-from cliente_cuenta a
+			
+			$sql3="select b.nombre as 'Tipo de cuenta',a.tipo as 'Tipo de Movimiento',a.monto,a.fecha
+from movimientos a
 INNER JOIN cuenta b 
  ON a.idcuenta = b.idcuenta INNER JOIN clientes c
  ON a.idcliente =c.idcliente
- where c.idcliente = $sql2[0]"; 
-			
-	
+ where c.idcliente =$sql2[0]"; 
+  
+  
+  
+  $stmt =$this->conexion->prepare($sql3);
+//$sth->execute();
 
- 
-  	$sql2=null;
-		foreach ($this->conexion->query($sql3) as $res)
-		{
-			$sql2=$res;
-		}
-		
-		
-		
-		
-		
-		
-	$b= "<table border='1'>
+/* Fetch all of the remaining rows in the result set */
+//print("Fetch all of the remaining rows in the result set:\n");
+//$result = $sth->fetchAll(\PDO::FETCH_ASSOC);
+//$b=$result;
+
+
+$stmt->execute(array("%$query%"));
+// fetching rows into array
+$data = $stmt->fetchAll();
+
+$b= "<table border='1'>
 <tr>
-<th>Numero de  Cuenta</th>
-<th>Tipo</th>
-<th>Saldo Disponible</th>
+<th>Tipo de cuenta</th>
+<th>Tipo de Movimiento</th>
+<th>monto</th>
+<th>fecha</th>
 </tr>";
-foreach ($sql2 as &$value) {
-    $b = $b .  "<tr>";
-$b = $b . "<td>" . $value  . "</td>";
 
+
+
+foreach($data as $row){
+
+$b = $b .  "<tr>";
+$b = $b . "<td>" . $row['Tipo de cuenta']  . "</td>";
+$b = $b . "<td>" . $row['Tipo de Movimiento']  . "</td>";
+$b = $b . "<td>" . $row['monto']  . "</td>";
+$b = $b . "<td>" . $row['fecha']  . "</td>";
 $b = $b .  "</tr>";
+
 }
 
 $b = $b .  "</table>";
 
-$this->conexion=null;
+
+
+
+		$this->conexion=null;
 		return $b;
-		//return $sql2;
 	}
-	
 	
 public function getuser($usuario,$pass)
 	{

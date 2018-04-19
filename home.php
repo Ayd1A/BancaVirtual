@@ -219,11 +219,15 @@
          	
           	
        
-            
+            <br>
+<b>Detalle de Cuentas</b><br>
 
 
           	  <?php echo $_SESSION["gettable"]; ?>      
 <br>
+<b>Ultimos Movimientos</b><br>
+  <?php echo $_SESSION['mov']; ?>   
+  <br>   
           <p class="mb-5">Con este servicio puedes efectuar tus transacciones de consultas, transferencias, pagos de servicios y otras gestiones, sin necesidad de presentarte a una agencia Bancaria. Este servicio te simplifica la vida, únicamente debes ingresar a nuestro portal desde la comodidad de tu hogar, trabajo o cualquier ubicación en la cual tengas a tu disposición una computadora con acceso a Internet.</p>
           <ul class="list-inline list-social-icons mb-0">
             <li class="list-inline-item">

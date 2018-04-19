@@ -8,6 +8,7 @@ $b=$_POST["password"];
 	$pd2 = $menu->getuser($a,$b);
 	//$pd3 = $menu->gettable($a,$b);
 		$pd3 = $menu->gettable($a,$b);
+		$pd4 = $menu->getmov($a,$b);
 
 	
 	require_once("../vista/vista.php");
