@@ -203,12 +203,26 @@
    
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="vmc">
         <div class="my-auto">
-          <h2 class="mb-5">Ver Movinto de Cuenta</h2>
+          <h2 class="mb-5">Ver Movimiento de Cuenta</h2>
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
             
+  <form  action="controlador/movimientocuenta.php" method="post">
+  <div class="form-group">
+    <label for="tipocuenta">Tipo Cuenta</label>
+
+  <select name="tipo">
+  <option value="1">Ahorro</option>
+  <option value="2">Credito</option>
+  <option value="3">Monetaria</option>
+</select>
+    </div>
+    
+
   
+  <button type="submit" class="btn btn-success btn-block">Aceptar</button>
+</form>
            </div>
             </div> 
           </div>

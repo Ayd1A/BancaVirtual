@@ -15,8 +15,7 @@
     <link href="librerias/devicons/css/devicons.min.css" rel="stylesheet">
     <link href="librerias/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-    
-    <link href="librerias/css/resume.css" rel="stylesheet">
+     <link href="librerias/css/resume.css" rel="stylesheet">
 <link href="librerias/css/resume.min.css" rel="stylesheet">
     
      <style type="text/css">
