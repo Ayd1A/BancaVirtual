@@ -52,15 +52,16 @@ class user
 			$sql2=$res;
 		}
 			
-			$sql3="select a.idclientcuenta as 'Numero de cuenta',b.nombre,a.monto
+			$sql3="select a.idcuenta as 'Numero de cuenta',b.nombre,a.monto
 from cliente_cuenta a
 INNER JOIN cuenta b 
- ON a.idclientcuenta = b.idcuenta INNER JOIN clientes c
+ ON a.idcuenta = b.idcuenta INNER JOIN clientes c
  ON a.idcliente =c.idcliente
   where c.idcliente = $sql2[0]"; 
   
   
-  
+
+
   
   $stmt =$this->conexion->prepare($sql3);
 //$sth->execute();
@@ -77,7 +78,7 @@ $data = $stmt->fetchAll();
 
 $b= "<table border='1'>
 <tr>
-<th>Numero de  Cuenta</th>
+<th>Numero de Cuenta</th>
 <th>Tipo</th>
 <th>Saldo Disponible</th>
 </tr>";
